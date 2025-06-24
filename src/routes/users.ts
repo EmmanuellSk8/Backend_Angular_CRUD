@@ -39,7 +39,7 @@ router.post('/create', (req: Request, res: Response) => {
   );
 });
 
-router.put('/:id', (req: Request, res: Response) => {
+router.put('/update/:id', (req: Request, res: Response) => {
   const { name, email, last_name, tel }: User = req.body;
 
   db.query(
@@ -52,7 +52,7 @@ router.put('/:id', (req: Request, res: Response) => {
   );
 });
 
-router.delete('/:id', (req: Request, res: Response) => {
+router.delete('/delete/:id', (req: Request, res: Response) => {
   db.query(
     'DELETE FROM users WHERE id = ?',
     [req.params.id],
